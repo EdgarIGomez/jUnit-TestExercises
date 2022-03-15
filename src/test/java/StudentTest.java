@@ -69,11 +69,32 @@ public class StudentTest {
         ed.addGrade(100);
         ed.addGrade(90);
         assertEquals(95, ed.getGradeAverage(), 0);
+
         Student luna = new Student(2L, "Luna");
         luna.addGrade(90);
         luna.addGrade(73);
         assertEquals(81.5, luna.getGradeAverage(), 0);
+    }
 
+    @Test
+    public void testReplaceGradeWorks(){
+        Student ed = new Student(1L, "Edd");
+        ed.addGrade(100);
+        ed.replaceGrade(90,0);
+        assertSame(90, ed.getGrades().get(0));
 
+        Student luna = new Student(2L, "Luna");
+        luna.addGrade(90);
+        luna.replaceGrade(73,0);
+        assertSame(73, luna.getGrades().get(0));
+    }
+
+    @Test
+    public void testDeleteGradeWorks(){
+        Student ed = new Student(1L, "Edd");
+        ed.addGrade(100);
+        assertEquals(1, ed.getGrades().size());
+        ed.removeGrade(0);
+        assertEquals(0, ed.getGrades().size());
     }
 }
