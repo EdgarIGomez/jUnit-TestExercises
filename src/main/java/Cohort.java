@@ -9,6 +9,14 @@ public class Cohort {
         this.students = new ArrayList<>();
     }
 
+    public void addStudent(Student student){
+        this.students.add(student);
+    }
+
+    public List<Student> getStudents(){
+        return this.students;
+    }
+
     public double getCohortAverage(){
         double average = 0;
 
@@ -19,7 +27,4 @@ public class Cohort {
         return average / students.size();
     }
 
-    public List<Student> getStudents(){
-        return this.students;
-    }
 }
