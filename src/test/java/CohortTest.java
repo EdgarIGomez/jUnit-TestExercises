@@ -54,5 +54,12 @@ public class CohortTest {
         assertEquals(92.5, sirius.getCohortAverage(),0);
     }
 
+    @Test
+    public void testGetStudentByIdWorks(){
+        assertEquals(ed, sirius.getStudentById(1L));
+        sirius.addStudent(luna);
+        assertEquals(luna, sirius.getStudentById(2L));
+    }
+
 }
 
